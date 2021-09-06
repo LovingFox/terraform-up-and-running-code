@@ -1,16 +1,13 @@
 terraform {
-  required_version = ">= 0.12, < 0.13"
+  required_version = ">= 0.12"
 }
 
 provider "aws" {
-  region = "us-east-2"
-
-  # Allow any 2.x version of the AWS provider
-  version = "~> 2.0"
+  region = "us-west-2"
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
+  ami           = "ami-08d70e59c07c61a3a"
   instance_type = "t2.micro"
 }
 
