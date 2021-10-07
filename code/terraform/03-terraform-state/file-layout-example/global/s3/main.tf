@@ -1,5 +1,14 @@
 terraform {
   required_version = ">= 0.12"
+  backend "s3" {
+    # Поменяйте это на имя своего бакета!
+    bucket = "terraform-asg-bucket-revyakin"
+    key = "global/s3/terraform.tfstate"
+    region = "us-west-2"
+    # Замените это именем своей таблицы DynamoDB!
+    dynamodb_table = "terraform-asg-table-revyakin"
+    encrypt = true
+  }
 }
 
 provider "aws" {
