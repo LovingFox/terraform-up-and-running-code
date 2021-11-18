@@ -1,9 +1,9 @@
 terraform {
-  required_version = ">= 0.12, < 0.13"
+  required_version = ">= 0.12"
 }
 
 resource "aws_launch_configuration" "example" {
-  image_id        = "ami-0c55b159cbfafe1f0"
+  image_id        = "ami-08d70e59c07c61a3a"
   instance_type   = var.instance_type
   security_groups = [aws_security_group.instance.id]
   user_data       = data.template_file.user_data.rendered
