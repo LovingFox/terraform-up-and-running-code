@@ -17,7 +17,7 @@ const appDirProd = "../live/prod/services/hello-world-app"
 const dbDirStage = "../live/stage/data-stores/mysql"
 const appDirStage = "../live/stage/services/hello-world-app"
 
-func TestHelloWorldAppStage(t *testing.T)  {
+func _TestHelloWorldAppStage(t *testing.T)  {
 	t.Parallel()
 
 	// Deploy the MySQL DB
@@ -39,6 +39,7 @@ func createDbOpts(t *testing.T, terraformDir string) *terraform.Options {
 
 	bucketForTesting := GetRequiredEnvVar(t, TerraformStateBucketForTestEnvVarName)
 	bucketRegionForTesting := GetRequiredEnvVar(t, TerraformStateRegionForTestEnvVarName)
+//	dynamodbTableForTesting := GetRequiredEnvVar(t, TerraformDynamodbTableForTestEnvVarName)
 
 	dbStateKey := fmt.Sprintf("%s/%s/terraform.tfstate", t.Name(), uniqueId)
 
@@ -53,6 +54,7 @@ func createDbOpts(t *testing.T, terraformDir string) *terraform.Options {
 		BackendConfig: map[string]interface{}{
 			"bucket":         bucketForTesting,
 			"region":         bucketRegionForTesting,
+//			"dynamodb_table": dynamodbTableForTesting,
 			"key":            dbStateKey,
 			"encrypt":        true,
 		},
@@ -92,6 +94,7 @@ func validateHelloApp(t *testing.T, helloOpts *terraform.Options) {
 	http_helper.HttpGetWithRetryWithCustomValidation(
 		t,
 		url,
+		nil,
 		maxRetries,
 		timeBetweenRetries,
 		func(status int, body string) bool {
@@ -185,6 +188,7 @@ func redeployApp(t *testing.T, helloAppDir string) {
 	http_helper.HttpGetWithRetryWithCustomValidation(
 		t,
 		url,
+		nil,
 		maxRetries,
 		timeBetweenRetries,
 		func(status int, body string) bool {
@@ -198,7 +202,7 @@ func redeployApp(t *testing.T, helloAppDir string) {
 	waitGroup.Wait()
 }
 
-func TestHelloWorldAppProdWithStages(t *testing.T)  {
+func _TestHelloWorldAppProdWithStages(t *testing.T)  {
 	t.Parallel()
 
 	// Deploy the MySQL DB

@@ -1,0 +1,611 @@
+=== RUN   TestHelloWorldAppStageWithStages
+=== PAUSE TestHelloWorldAppStageWithStages
+=== CONT  TestHelloWorldAppStageWithStages
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 test_structure.go:30: The 'SKIP_deploy_db' environment variable is set, so skipping stage 'deploy_db'.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 test_structure.go:30: The 'SKIP_deploy_app' environment variable is set, so skipping stage 'deploy_app'.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 test_structure.go:30: The 'SKIP_validate_app' environment variable is set, so skipping stage 'validate_app'.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 test_structure.go:30: The 'SKIP_redeploy_app' environment variable is set, so skipping stage 'redeploy_app'.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 test_structure.go:27: The 'SKIP_teardown_app' environment variable is not set, so executing stage 'teardown_app'.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 save_test_data.go:215: Loading test data from ../live/stage/services/hello-world-app/.test-data/TerraformOptions.json
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 retry.go:91: terraform [destroy -auto-approve -input=false -var db_remote_state_key=TestHelloWorldAppStageWithStages/GPhMem/terraform.tfstate -var environment=testGPhMem -var db_remote_state_bucket=terraform-asg-bucket-revyakin -lock=false]
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:33+03:00 logger.go:66: Running command terraform with args [destroy -auto-approve -input=false -var db_remote_state_key=TestHelloWorldAppStageWithStages/GPhMem/terraform.tfstate -var environment=testGPhMem -var db_remote_state_bucket=terraform-asg-bucket-revyakin -lock=false]
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:38+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_security_group.instance: Refreshing state... [id=sg-0a0cdadaa01006347][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:38+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Refreshing state... [id=sg-09ba6d81f51dec9c3][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:39+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_launch_configuration.example: Refreshing state... [id=terraform-20211124124605945000000001][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:39+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_security_group_rule.allow_server_http_inbound: Refreshing state... [id=sgrule-3402598274][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:39+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group_rule.allow_http_inbound: Refreshing state... [id=sgrule-2096668039][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:39+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group_rule.allow_all_outbound: Refreshing state... [id=sgrule-3068437393][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:41+03:00 logger.go:66: [0m[1mmodule.hello_world_app.aws_lb_target_group.asg: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:targetgroup/hello-world-testGPhMem/f35fa9194b53b613][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:42+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_lb.example: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:loadbalancer/app/hello-world-testGPhMem/17020e6514260f14][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:44+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Refreshing state... [id=hello-world-testGPhMem-terraform-20211124124605945000000001][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:45+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_lb_listener.http: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:listener/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:45+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.high_cpu_utilization: Refreshing state... [id=hello-world-testGPhMem-high-cpu-utilization][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:45+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.low_cpu_credit_balance[0]: Refreshing state... [id=hello-world-testGPhMem-low-cpu-credit-balance][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:47+03:00 logger.go:66: [0m[1mmodule.hello_world_app.aws_lb_listener_rule.asg: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:listener-rule/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5/755d38e91cc25c68][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0mTerraform detected the following changes made outside of Terraform since the
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: last "terraform apply":
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_autoscaling_group.example[0m has been changed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [33m~[0m[0m resource "aws_autoscaling_group" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [32m+[0m [0m[1m[0menabled_metrics[0m[0m           = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [1m[0mid[0m[0m                        = "hello-world-testGPhMem-terraform-20211124124605945000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [32m+[0m [0m[1m[0mload_balancers[0m[0m            = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [1m[0mname[0m[0m                      = "hello-world-testGPhMem-terraform-20211124124605945000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [32m+[0m [0m[1m[0msuspended_processes[0m[0m       = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [32m+[0m [0m[1m[0mtermination_policies[0m[0m      = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [90m# (21 unchanged attributes hidden)[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [90m# (1 unchanged block hidden)[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_launch_configuration.example[0m has been changed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [33m~[0m[0m resource "aws_launch_configuration" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [1m[0mid[0m[0m                               = "terraform-20211124124605945000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [1m[0mname[0m[0m                             = "terraform-20211124124605945000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [32m+[0m [0m[1m[0mvpc_classic_link_security_groups[0m[0m = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         [90m# (9 unchanged attributes hidden)[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: Unless you have made equivalent changes to your configuration, or ignored the
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: relevant attributes using ignore_changes, the following plan may include
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: actions to undo or respond to these changes.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [90m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: ─────────────────────────────────────────────────────────────────────────────[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: Terraform used the selected providers to generate the following execution
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: plan. Resource actions are indicated with the following symbols:
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:   [31m-[0m destroy
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: Terraform will perform the following actions:
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.aws_lb_listener_rule.asg[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_lb_listener_rule" "asg" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m          = "arn:aws:elasticloadbalancing:us-west-2:477157789902:listener-rule/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5/755d38e91cc25c68" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m           = "arn:aws:elasticloadbalancing:us-west-2:477157789902:listener-rule/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5/755d38e91cc25c68" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mlistener_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-2:477157789902:listener/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mpriority[0m[0m     = 100 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m         = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m     = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0maction {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0morder[0m[0m            = 1 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mtarget_group_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-2:477157789902:targetgroup/hello-world-testGPhMem/f35fa9194b53b613" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mtype[0m[0m             = "forward" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0mcondition {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0mpath_pattern {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0m[1m[0mvalues[0m[0m = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                   [31m-[0m [0m"*",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                 ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:             }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.aws_lb_target_group.asg[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_lb_target_group" "asg" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                                = "arn:aws:elasticloadbalancing:us-west-2:477157789902:targetgroup/hello-world-testGPhMem/f35fa9194b53b613" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn_suffix[0m[0m                         = "targetgroup/hello-world-testGPhMem/f35fa9194b53b613" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mderegistration_delay[0m[0m               = "300" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                                 = "arn:aws:elasticloadbalancing:us-west-2:477157789902:targetgroup/hello-world-testGPhMem/f35fa9194b53b613" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mlambda_multi_value_headers_enabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mload_balancing_algorithm_type[0m[0m      = "round_robin" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                               = "hello-world-testGPhMem" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mport[0m[0m                               = 8080 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotocol[0m[0m                           = "HTTP" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotocol_version[0m[0m                   = "HTTP1" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mproxy_protocol_v2[0m[0m                  = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mslow_start[0m[0m                         = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                               = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m                           = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtarget_type[0m[0m                        = "instance" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_id[0m[0m                             = "vpc-1c7d7064" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0mhealth_check {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0menabled[0m[0m             = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mhealthy_threshold[0m[0m   = 2 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0minterval[0m[0m            = 15 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mmatcher[0m[0m             = "200" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mpath[0m[0m                = "/" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mport[0m[0m                = "traffic-port" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mprotocol[0m[0m            = "HTTP" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mtimeout[0m[0m             = 3 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0munhealthy_threshold[0m[0m = 2 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0mstickiness {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mcookie_duration[0m[0m = 86400 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0menabled[0m[0m         = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mtype[0m[0m            = "lb_cookie" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.alb.aws_lb.example[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_lb" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                        = "arn:aws:elasticloadbalancing:us-west-2:477157789902:loadbalancer/app/hello-world-testGPhMem/17020e6514260f14" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn_suffix[0m[0m                 = "app/hello-world-testGPhMem/17020e6514260f14" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdns_name[0m[0m                   = "hello-world-testGPhMem-171065434.us-west-2.elb.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdrop_invalid_header_fields[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0menable_deletion_protection[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0menable_http2[0m[0m               = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                         = "arn:aws:elasticloadbalancing:us-west-2:477157789902:loadbalancer/app/hello-world-testGPhMem/17020e6514260f14" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0midle_timeout[0m[0m               = 60 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0minternal[0m[0m                   = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mip_address_type[0m[0m            = "ipv4" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mload_balancer_type[0m[0m         = "application" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                       = "hello-world-testGPhMem" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msecurity_groups[0m[0m            = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"sg-09ba6d81f51dec9c3",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msubnets[0m[0m                    = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-2c48f066",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-cbaac396",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-edc85695",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-f3dd3cd9",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                       = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m                   = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_id[0m[0m                     = "vpc-1c7d7064" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mzone_id[0m[0m                    = "Z1H1FL5HABSF5" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0maccess_logs {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0msubnet_mapping {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0msubnet_id[0m[0m = "subnet-2c48f066" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0msubnet_mapping {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0msubnet_id[0m[0m = "subnet-cbaac396" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0msubnet_mapping {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0msubnet_id[0m[0m = "subnet-edc85695" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0msubnet_mapping {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0msubnet_id[0m[0m = "subnet-f3dd3cd9" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.alb.aws_lb_listener.http[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_lb_listener" "http" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m               = "arn:aws:elasticloadbalancing:us-west-2:477157789902:listener/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                = "arn:aws:elasticloadbalancing:us-west-2:477157789902:listener/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mload_balancer_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-2:477157789902:loadbalancer/app/hello-world-testGPhMem/17020e6514260f14" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mport[0m[0m              = 80 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotocol[0m[0m          = "HTTP" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m              = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m          = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0mdefault_action {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0morder[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mtype[0m[0m  = "fixed-response" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0mfixed_response {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0m[1m[0mcontent_type[0m[0m = "text/plain" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0m[1m[0mmessage_body[0m[0m = "404: page not found" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0m[1m[0mstatus_code[0m[0m  = "404" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:             }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.alb.aws_security_group.alb[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_security_group" "alb" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                    = "arn:aws:ec2:us-west-2:477157789902:security-group/sg-09ba6d81f51dec9c3" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0megress[0m[0m                 = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m{
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mcidr_blocks      = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                   [31m-[0m [0m"0.0.0.0/0",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                 ]
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mdescription      = ""
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mfrom_port        = 0
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mipv6_cidr_blocks = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mprefix_list_ids  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mprotocol         = "-1"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0msecurity_groups  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mself             = false
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mto_port          = 0
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:             },
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-09ba6d81f51dec9c3" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mingress[0m[0m                = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m{
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mcidr_blocks      = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                   [31m-[0m [0m"0.0.0.0/0",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                 ]
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mdescription      = ""
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mfrom_port        = 80
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mipv6_cidr_blocks = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mprefix_list_ids  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mprotocol         = "tcp"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0msecurity_groups  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mself             = false
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mto_port          = 80
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:             },
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                   = "hello-world-testGPhMem" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mowner_id[0m[0m               = "477157789902" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                   = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m               = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-1c7d7064" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.alb.aws_security_group_rule.allow_all_outbound[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_security_group_rule" "allow_all_outbound" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcidr_blocks[0m[0m       = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"0.0.0.0/0",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mfrom_port[0m[0m         = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                = "sgrule-3068437393" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mipv6_cidr_blocks[0m[0m  = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprefix_list_ids[0m[0m   = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotocol[0m[0m          = "-1" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msecurity_group_id[0m[0m = "sg-09ba6d81f51dec9c3" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mself[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mto_port[0m[0m           = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtype[0m[0m              = "egress" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.alb.aws_security_group_rule.allow_http_inbound[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_security_group_rule" "allow_http_inbound" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcidr_blocks[0m[0m       = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"0.0.0.0/0",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mfrom_port[0m[0m         = 80 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                = "sgrule-2096668039" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mipv6_cidr_blocks[0m[0m  = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprefix_list_ids[0m[0m   = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotocol[0m[0m          = "tcp" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msecurity_group_id[0m[0m = "sg-09ba6d81f51dec9c3" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mself[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mto_port[0m[0m           = 80 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtype[0m[0m              = "ingress" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_autoscaling_group.example[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_autoscaling_group" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                       = "arn:aws:autoscaling:us-west-2:477157789902:autoScalingGroup:fc5a716f-cf38-474d-a17d-f243e196fd77:autoScalingGroupName/hello-world-testGPhMem-terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mavailability_zones[0m[0m        = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"us-west-2a",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"us-west-2b",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"us-west-2c",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"us-west-2d",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcapacity_rebalance[0m[0m        = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdefault_cooldown[0m[0m          = 300 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdesired_capacity[0m[0m          = 2 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0menabled_metrics[0m[0m           = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mforce_delete[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mforce_delete_warm_pool[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mhealth_check_grace_period[0m[0m = 300 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mhealth_check_type[0m[0m         = "ELB" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                        = "hello-world-testGPhMem-terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mlaunch_configuration[0m[0m      = "terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mload_balancers[0m[0m            = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmax_instance_lifetime[0m[0m     = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmax_size[0m[0m                  = 2 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmetrics_granularity[0m[0m       = "1Minute" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmin_elb_capacity[0m[0m          = 2 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmin_size[0m[0m                  = 2 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                      = "hello-world-testGPhMem-terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname_prefix[0m[0m               = "hello-world-testGPhMem-terraform-" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotect_from_scale_in[0m[0m     = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mservice_linked_role_arn[0m[0m   = "arn:aws:iam::477157789902:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msuspended_processes[0m[0m       = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtarget_group_arns[0m[0m         = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"arn:aws:elasticloadbalancing:us-west-2:477157789902:targetgroup/hello-world-testGPhMem/f35fa9194b53b613",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtermination_policies[0m[0m      = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_zone_identifier[0m[0m       = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-2c48f066",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-cbaac396",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-edc85695",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"subnet-f3dd3cd9",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mwait_for_capacity_timeout[0m[0m = "10m" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0mtag {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mkey[0m[0m                 = "Name" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mpropagate_at_launch[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m[1m[0mvalue[0m[0m               = "hello-world-testGPhMem" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.high_cpu_utilization[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mactions_enabled[0m[0m           = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0malarm_actions[0m[0m             = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0malarm_name[0m[0m                = "hello-world-testGPhMem-high-cpu-utilization" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                       = "arn:aws:cloudwatch:us-west-2:477157789902:alarm:hello-world-testGPhMem-high-cpu-utilization" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcomparison_operator[0m[0m       = "GreaterThanThreshold" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdatapoints_to_alarm[0m[0m       = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdimensions[0m[0m                = {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"AutoScalingGroupName" = "hello-world-testGPhMem-terraform-20211124124605945000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         } [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mevaluation_periods[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                        = "hello-world-testGPhMem-high-cpu-utilization" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0minsufficient_data_actions[0m[0m = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmetric_name[0m[0m               = "CPUUtilization" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mnamespace[0m[0m                 = "AWS/EC2" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mok_actions[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mperiod[0m[0m                    = 300 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mstatistic[0m[0m                 = "Average" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                      = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mthreshold[0m[0m                 = 90 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtreat_missing_data[0m[0m        = "missing" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0munit[0m[0m                      = "Percent" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.low_cpu_credit_balance[0][0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_cloudwatch_metric_alarm" "low_cpu_credit_balance" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mactions_enabled[0m[0m           = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0malarm_actions[0m[0m             = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0malarm_name[0m[0m                = "hello-world-testGPhMem-low-cpu-credit-balance" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                       = "arn:aws:cloudwatch:us-west-2:477157789902:alarm:hello-world-testGPhMem-low-cpu-credit-balance" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcomparison_operator[0m[0m       = "LessThanThreshold" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdatapoints_to_alarm[0m[0m       = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdimensions[0m[0m                = {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"AutoScalingGroupName" = "hello-world-testGPhMem-terraform-20211124124605945000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         } [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mevaluation_periods[0m[0m        = 1 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                        = "hello-world-testGPhMem-low-cpu-credit-balance" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0minsufficient_data_actions[0m[0m = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmetric_name[0m[0m               = "CPUCreditBalance" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mnamespace[0m[0m                 = "AWS/EC2" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mok_actions[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mperiod[0m[0m                    = 300 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mstatistic[0m[0m                 = "Minimum" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                      = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mthreshold[0m[0m                 = 10 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtreat_missing_data[0m[0m        = "missing" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0munit[0m[0m                      = "Count" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_launch_configuration.example[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_launch_configuration" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                              = "arn:aws:autoscaling:us-west-2:477157789902:launchConfiguration:405a370a-94b3-4423-8677-8399a1efe432:launchConfigurationName/terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0massociate_public_ip_address[0m[0m      = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mebs_optimized[0m[0m                    = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0menable_monitoring[0m[0m                = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                               = "terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mimage_id[0m[0m                         = "ami-08d70e59c07c61a3a" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0minstance_type[0m[0m                    = "t2.micro" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                             = "terraform-20211124124605945000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname_prefix[0m[0m                      = "terraform-" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msecurity_groups[0m[0m                  = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"sg-0a0cdadaa01006347",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0muser_data[0m[0m                        = "9ef0b2e85ff838859aaf9268e3b81accdc0ac107" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_classic_link_security_groups[0m[0m = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_security_group.instance[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_security_group" "instance" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                    = "arn:aws:ec2:us-west-2:477157789902:security-group/sg-0a0cdadaa01006347" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0megress[0m[0m                 = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-0a0cdadaa01006347" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mingress[0m[0m                = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m{
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mcidr_blocks      = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                   [31m-[0m [0m"0.0.0.0/0",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:                 ]
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mdescription      = ""
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mfrom_port        = 8080
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mipv6_cidr_blocks = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mprefix_list_ids  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mprotocol         = "tcp"
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0msecurity_groups  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mself             = false
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:               [31m-[0m [0mto_port          = 8080
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:             },
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                   = "hello-world-testGPhMem-instance" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mowner_id[0m[0m               = "477157789902" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                   = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m               = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-1c7d7064" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1m  # module.hello_world_app.module.asg.aws_security_group_rule.allow_server_http_inbound[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_security_group_rule" "allow_server_http_inbound" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcidr_blocks[0m[0m       = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:           [31m-[0m [0m"0.0.0.0/0",
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mfrom_port[0m[0m         = 8080 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                = "sgrule-3402598274" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mipv6_cidr_blocks[0m[0m  = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprefix_list_ids[0m[0m   = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mprotocol[0m[0m          = "tcp" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0msecurity_group_id[0m[0m = "sg-0a0cdadaa01006347" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mself[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mto_port[0m[0m           = 8080 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtype[0m[0m              = "ingress" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m[1mPlan:[0m 0 to add, 0 to change, 13 to destroy.
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66: [1mChanges to Outputs:[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:49+03:00 logger.go:66:   [31m-[0m [0m[1m[0malb_dns_name[0m[0m = "hello-world-testGPhMem-171065434.us-west-2.elb.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:51+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_security_group_rule.allow_server_http_inbound: Destroying... [id=sgrule-3402598274][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:51+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group_rule.allow_all_outbound: Destroying... [id=sgrule-3068437393][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:51+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.high_cpu_utilization: Destroying... [id=hello-world-testGPhMem-high-cpu-utilization][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:51+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group_rule.allow_http_inbound: Destroying... [id=sgrule-2096668039][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:51+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.low_cpu_credit_balance[0]: Destroying... [id=hello-world-testGPhMem-low-cpu-credit-balance][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:51+03:00 logger.go:66: [0m[1mmodule.hello_world_app.aws_lb_listener_rule.asg: Destroying... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:listener-rule/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5/755d38e91cc25c68][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:52+03:00 logger.go:66: [0m[1mmodule.hello_world_app.aws_lb_listener_rule.asg: Destruction complete after 1s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:52+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.high_cpu_utilization: Destruction complete after 1s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:52+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_cloudwatch_metric_alarm.low_cpu_credit_balance[0]: Destruction complete after 1s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:52+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_lb_listener.http: Destroying... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:listener/app/hello-world-testGPhMem/17020e6514260f14/176e1a312479d1f5][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:52+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:53+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_security_group_rule.allow_server_http_inbound: Destruction complete after 2s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:53+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_lb_listener.http: Destruction complete after 1s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:53+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_lb.example: Destroying... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:loadbalancer/app/hello-world-testGPhMem/17020e6514260f14][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:53+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group_rule.allow_all_outbound: Destruction complete after 2s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:57:55+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group_rule.allow_http_inbound: Destruction complete after 4s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:02+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_lb.example: Destruction complete after 8s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:02+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Destroying... [id=sg-09ba6d81f51dec9c3][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:02+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:12+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Still destroying... [id=sg-09ba6d81f51dec9c3, 10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:12+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:22+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Still destroying... [id=sg-09ba6d81f51dec9c3, 20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:22+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:32+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Still destroying... [id=sg-09ba6d81f51dec9c3, 30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:32+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:42+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Still destroying... [id=sg-09ba6d81f51dec9c3, 40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:42+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 50s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:47+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.alb.aws_security_group.alb: Destruction complete after 45s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:58:52+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 1m0s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:02+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 1m10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:12+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 1m20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:22+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Still destroying... [id=hello-world-testGPhMem-terraform-20211124124605945000000001, 1m30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:23+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_autoscaling_group.example: Destruction complete after 1m30s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:23+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_launch_configuration.example: Destroying... [id=terraform-20211124124605945000000001][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:23+03:00 logger.go:66: [0m[1mmodule.hello_world_app.aws_lb_target_group.asg: Destroying... [id=arn:aws:elasticloadbalancing:us-west-2:477157789902:targetgroup/hello-world-testGPhMem/f35fa9194b53b613][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:24+03:00 logger.go:66: [0m[1mmodule.hello_world_app.aws_lb_target_group.asg: Destruction complete after 1s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:24+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_launch_configuration.example: Destruction complete after 1s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:24+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_security_group.instance: Destroying... [id=sg-0a0cdadaa01006347][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 logger.go:66: [0m[1mmodule.hello_world_app.module.asg.aws_security_group.instance: Destruction complete after 2s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 logger.go:66: [0m[1m[32m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 logger.go:66: Destroy complete! Resources: 13 destroyed.
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 logger.go:66: [0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 test_structure.go:27: The 'SKIP_teardown_db' environment variable is not set, so executing stage 'teardown_db'.
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 save_test_data.go:215: Loading test data from ../live/stage/data-stores/mysql/.test-data/TerraformOptions.json
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 retry.go:91: terraform [destroy -auto-approve -input=false -var db_name=testGPhMem -var db_password=password -lock=false]
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:26+03:00 logger.go:66: Running command terraform with args [destroy -auto-approve -input=false -var db_name=testGPhMem -var db_password=password -lock=false]
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:34+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Refreshing state... [id=terraform-up-and-running20211124123850121000000001][0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0mTerraform detected the following changes made outside of Terraform since the
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: last "terraform apply":
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [1m  # module.mysql.aws_db_instance.example[0m has been changed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0m  [33m~[0m[0m resource "aws_db_instance" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [32m+[0m [0m[1m[0menabled_cloudwatch_logs_exports[0m[0m       = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:         [1m[0mid[0m[0m                                    = "terraform-up-and-running20211124123850121000000001"
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:         [1m[0mname[0m[0m                                  = "testGPhMem"
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [32m+[0m [0m[1m[0msecurity_group_names[0m[0m                  = []
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [32m+[0m [0m[1m[0mtags[0m[0m                                  = {}
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:         [90m# (45 unchanged attributes hidden)[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: Unless you have made equivalent changes to your configuration, or ignored the
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: relevant attributes using ignore_changes, the following plan may include
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: actions to undo or respond to these changes.
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [90m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: ─────────────────────────────────────────────────────────────────────────────[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: Terraform used the selected providers to generate the following execution
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: plan. Resource actions are indicated with the following symbols:
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:   [31m-[0m destroy
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: Terraform will perform the following actions:
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [1m  # module.mysql.aws_db_instance.example[0m will be [1m[31mdestroyed[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0m  [31m-[0m[0m resource "aws_db_instance" "example" {
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0maddress[0m[0m                               = "terraform-up-and-running20211124123850121000000001.c2ancbomkisz.us-west-2.rds.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mallocated_storage[0m[0m                     = 10 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0marn[0m[0m                                   = "arn:aws:rds:us-west-2:477157789902:db:terraform-up-and-running20211124123850121000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mauto_minor_version_upgrade[0m[0m            = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mavailability_zone[0m[0m                     = "us-west-2b" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mbackup_retention_period[0m[0m               = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mbackup_window[0m[0m                         = "09:39-10:09" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mca_cert_identifier[0m[0m                    = "rds-ca-2019" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcopy_tags_to_snapshot[0m[0m                 = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mcustomer_owned_ip_enabled[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdb_subnet_group_name[0m[0m                  = "default" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdelete_automated_backups[0m[0m              = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mdeletion_protection[0m[0m                   = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0menabled_cloudwatch_logs_exports[0m[0m       = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mendpoint[0m[0m                              = "terraform-up-and-running20211124123850121000000001.c2ancbomkisz.us-west-2.rds.amazonaws.com:3306" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mengine[0m[0m                                = "mysql" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mengine_version[0m[0m                        = "8.0.23" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mengine_version_actual[0m[0m                 = "8.0.23" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mhosted_zone_id[0m[0m                        = "Z1PVIF0B656C1W" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0miam_database_authentication_enabled[0m[0m   = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mid[0m[0m                                    = "terraform-up-and-running20211124123850121000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0midentifier[0m[0m                            = "terraform-up-and-running20211124123850121000000001" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0midentifier_prefix[0m[0m                     = "terraform-up-and-running" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0minstance_class[0m[0m                        = "db.t2.micro" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0miops[0m[0m                                  = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mlatest_restorable_time[0m[0m                = "0001-01-01T00:00:00Z" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mlicense_model[0m[0m                         = "general-public-license" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmaintenance_window[0m[0m                    = "sun:10:11-sun:10:41" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmax_allocated_storage[0m[0m                 = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmonitoring_interval[0m[0m                   = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mmulti_az[0m[0m                              = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mname[0m[0m                                  = "testGPhMem" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0moption_group_name[0m[0m                     = "default:mysql-8-0" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mparameter_group_name[0m[0m                  = "default.mysql8.0" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mpassword[0m[0m                              = (sensitive value)
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mperformance_insights_enabled[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mperformance_insights_retention_period[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mport[0m[0m                                  = 3306 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mpublicly_accessible[0m[0m                   = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mreplicas[0m[0m                              = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mresource_id[0m[0m                           = "db-WQO4EZPRFWEKESWRS6SDIN7HUE" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0msecurity_group_names[0m[0m                  = [] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mskip_final_snapshot[0m[0m                   = true [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mstatus[0m[0m                                = "available" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mstorage_encrypted[0m[0m                     = false [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mstorage_type[0m[0m                          = "gp2" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags[0m[0m                                  = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mtags_all[0m[0m                              = {} [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0musername[0m[0m                              = "admin" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:       [31m-[0m [0m[1m[0mvpc_security_group_ids[0m[0m                = [
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:           [31m-[0m [0m"sg-724bde7a",
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:         ] [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:     }
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: 
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0m[1mPlan:[0m 0 to add, 0 to change, 1 to destroy.
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66: [1mChanges to Outputs:[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:   [31m-[0m [0m[1m[0maddress[0m[0m = "terraform-up-and-running20211124123850121000000001.c2ancbomkisz.us-west-2.rds.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:36+03:00 logger.go:66:   [31m-[0m [0m[1m[0mport[0m[0m    = 3306 [90m->[0m [0m[90mnull[0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:38+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Destroying... [id=terraform-up-and-running20211124123850121000000001][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:48+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T15:59:58+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:00:08+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:00:18+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:00:28+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 50s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:00:38+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 1m0s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:00:48+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 1m10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:00:58+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 1m20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:01:08+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 1m30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:01:18+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 1m40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:01:28+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 1m50s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:01:38+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 2m0s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:01:48+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 2m10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:01:58+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 2m20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:02:08+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 2m30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:02:18+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 2m40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:02:28+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 2m50s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:02:38+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 3m0s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:02:48+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 3m10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:02:58+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 3m20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:03:08+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 3m30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:03:18+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 3m40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:03:28+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 3m50s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:03:38+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 4m0s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:03:48+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 4m10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:03:58+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 4m20s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:08+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 4m30s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:18+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 4m40s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:28+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 4m50s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:38+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 5m0s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:48+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Still destroying... [id=terraform-up-and-running20211124123850121000000001, 5m10s elapsed][0m[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:54+03:00 logger.go:66: [0m[1mmodule.mysql.aws_db_instance.example: Destruction complete after 5m16s[0m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:56+03:00 logger.go:66: [0m[1m[32m
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:56+03:00 logger.go:66: Destroy complete! Resources: 1 destroyed.
+TestHelloWorldAppStageWithStages 2021-11-24T16:04:56+03:00 logger.go:66: [0m
+--- PASS: TestHelloWorldAppStageWithStages (442.40s)
+PASS
+ok  	command-line-arguments	442.421s

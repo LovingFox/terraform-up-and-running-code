@@ -10,6 +10,7 @@ import (
 // region as environment variables
 const TerraformStateBucketForTestEnvVarName = "TEST_STATE_S3_BUCKET"
 const TerraformStateRegionForTestEnvVarName = "TEST_STATE_REGION"
+const TerraformDynamodbTableForTestEnvVarName = "TEST_DYNAMODB_TABLE"
 
 // Get the value of the environment variable with the given name. If that environment variable is not set, fail the
 // test.
