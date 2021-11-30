@@ -1,5 +1,6 @@
 terraform {
-  source = "../../../../modules//services/hello-world-app"
+  # source = "../../../../modules//services/hello-world-app"
+  source = "github.com/LovingFox/terraform-up-and-running-code//code/terraform/08-terraform-team/modules/services/hello-world-app?ref=v0.0.8"
 }
 
 include {
