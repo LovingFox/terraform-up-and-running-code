@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.12, < 0.13"
+  required_version = ">= 0.12"
 }
 
 resource "aws_launch_configuration" "example" {
@@ -30,7 +30,7 @@ resource "aws_autoscaling_group" "example" {
   min_size = var.min_size
   max_size = var.max_size
 
-  # Wait for at least this many instances to pass health checks before
+  # Wait for at lwest this many instances to pass health checks before
   # considering the ASG deployment complete
   min_elb_capacity = var.min_size
 
