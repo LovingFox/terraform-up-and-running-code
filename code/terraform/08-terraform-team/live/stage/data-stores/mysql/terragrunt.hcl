@@ -1,6 +1,6 @@
 terraform {
   # source = "../../../../modules//data-stores/mysql"
-  source = "github.com/LovingFox/terraform-up-and-running-code//code/terraform/08-terraform-team/modules/data-stores/mysql?ref=v0.0.9"
+  source = "github.com/LovingFox/terraform-up-and-running-code//code/terraform/08-terraform-team/modules/data-stores/mysql?ref=v0.0.10"
 }
 
 include {
